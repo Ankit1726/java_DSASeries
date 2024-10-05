@@ -1,0 +1,11 @@
+package Arrays;
+
+public class _ArraysCreation {
+    public static void main(String[] args) {
+        int arr[] = {2,4,5,6,7,8,91};
+        for (int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+        System.out.println();
+    }
+}
