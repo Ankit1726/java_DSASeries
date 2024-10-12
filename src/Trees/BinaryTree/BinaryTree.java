@@ -1,5 +1,9 @@
 package Trees.BinaryTree;
 
+import com.sun.jdi.connect.spi.TransportService;
+
+import javax.swing.plaf.basic.BasicSplitPaneUI;
+import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -67,8 +71,8 @@ public class BinaryTree {  // TC->O(n)
             q.add(null);
 
             while (!q.isEmpty()){
-                Node currNOde = q.remove();
-                if (currNOde == null){
+                Node currNode = q.remove();
+                if (currNode == null){
                     System.out.println();
                     if (q.isEmpty()){
                         break;
@@ -76,16 +80,28 @@ public class BinaryTree {  // TC->O(n)
                         q.add(null);
                     }
                 }else {
-                    System.out.print(currNOde.data+" ");
-                    if (currNOde.left !=null){
-                        q.add(currNOde.left);
+                    System.out.print(currNode.data+" ");
+                    if (currNode.left !=null){
+                        q.add(currNode.left);
                     }
-                    if (currNOde.right!=null){
-                        q.add(currNOde.right);
+                    if (currNode.right!=null){
+                        q.add(currNode.right);
                     }
                 }
             }
         }
+
+    }
+    public static void KLevel(Node root,int level,int k){
+        if (root ==null){
+            return;
+        }
+        if (level == k){
+            System.out.print(root.data+" ");
+            return;
+        }
+        KLevel(root.left,level+1,k);
+        KLevel(root.right,level+1,k);
     }
 
     public static void main(String[] args) {
@@ -95,11 +111,14 @@ public class BinaryTree {  // TC->O(n)
      /*
       System.out.println(root.data);
       tree.preOrder(root);
-       tree.inOrder(root);
-        tree.postOrder(root);
-
+      tree.inOrder(root);
+      tree.postOrder(root);
+      tree.levelOrder(root);
       */
-        tree.levelOrder(root);
+        int k = 2;
+        System.out.println("K level of Tree -> ");
+        KLevel(root,1,k);
+
 
     }
 }
