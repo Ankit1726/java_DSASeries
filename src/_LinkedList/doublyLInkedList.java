@@ -28,6 +28,18 @@ public class doublyLInkedList {
         head.prev = newNode;
         head = newNode;
     }
+    // addLast
+    public void addLast(int data){
+        Node newNode = new Node(data);
+        size++;
+        if (head== null){
+            head = tail = newNode;
+            return;
+        }
+        tail.next = newNode;
+        tail.prev = newNode;
+        tail = newNode;
+    }
     // removeFirst
     public int removeFirst(){
         if (head == null){
