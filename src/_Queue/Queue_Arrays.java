@@ -1,6 +1,5 @@
 package _Queue;
 
-import java.util.Scanner;
 
 public class Queue_Arrays {
     static class Queue{

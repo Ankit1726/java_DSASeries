@@ -2,7 +2,6 @@ package _Queue;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Stack;
 
 public class stack_2Queue {
     static class Stack{
